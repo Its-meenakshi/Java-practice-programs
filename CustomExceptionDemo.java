@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.scanner;
+public class CustomExceptionDemo{
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int age = sc.nextInt();
+    try{
+      if(age<18){
+        throw new InvalidAgeException("Age must be over 18");
+      }else{
+        System.out.println("Eligible to vote");
+      }
+    }catch(InvalidAgeException e) {
+      System.out.println("Exception caught"+e.getMessage());
+    }
+    sc.close();
+  }
+}
